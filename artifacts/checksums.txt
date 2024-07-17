@@ -1,0 +1,1 @@
+80eea8788352d6a44de2b6475503ba786343ff5e98b8c8e9cf07e423a509bd8c  cw1_whitelist.wasm
