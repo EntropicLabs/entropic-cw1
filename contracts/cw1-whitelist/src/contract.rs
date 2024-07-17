@@ -19,6 +19,12 @@ use crate::state::{AdminList, ADMIN_LIST};
 const CONTRACT_NAME: &str = "crates.io:cw1-whitelist";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
+#[entry_point]
+pub fn migrate(deps: DepsMut, _env: Env, _msg: ()) -> StdResult<Response> {
+    set_contract_version(deps.storage, CONTRACT_NAME, CONTRACT_VERSION)?;
+    Ok(Response::default())
+}
+
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn instantiate(
     deps: DepsMut,
